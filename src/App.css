@@ -1,0 +1,80 @@
+.Listing {
+  background: var(--clr-Background);
+  padding: 20px 25px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 20px 30px -30px var(--clr-primary);
+}
+
+.Listing.featured::before {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--clr-primary);
+}
+
+.Listing-company {
+  color: var(--clr-primary);
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.Listing-title {
+  color: var(--clr-2);
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.Listing-info {
+  color: var(--clr-1);
+  margin-bottom: 1rem;
+}
+
+.Listing-info > *{
+  margin: 7px;
+}
+
+.Listing-info > *:first-child {
+  margin-left: 0;
+}
+
+.Label {
+  padding: 4px 10px;
+  padding-top: 8px;
+  border-radius: 50px;
+  background-color: var(--clr-2);
+  color: #fff;
+  margin-left: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.Label.new {
+  background: var(--clr-primary);
+}
+
+.Label.featured {
+  background: var(--clr-2);
+}
+
+.Tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--clr-1);
+}
+
+.Tags > * {
+  color: var(--clr-primary);
+  font-weight: bold;
+  padding: 5px;
+  margin: 0 7px;
+  margin-top: 10px;
+}
