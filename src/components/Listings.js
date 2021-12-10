@@ -19,26 +19,19 @@ import Label from './Label';
 
 const spacer = '•';
 
-export default function Listings({listings}) {
+export default function Listings({listings, setTags}) {
   return (
     <section>
-      {listings.map(listing => <JobListing data={listing} key={listing.id}/>)}
+      {listings.map(listing => <JobListing data={listing} key={listing.id} setTags={setTags} />)}
     </section>
   );
 }
 
 
-function JobListing({data}) {
+function JobListing({data, setTags}) {
   
   const {id, company, logo, new: isNew, featured: isFeatured, position, role,
     level, postedAt, contract, location, languages, tools} = data;
-  
-  const tags = [
-  role,
-  level,
-  ...languages,
-  ...tools
-  ];
 
   return (
     <article data-id={id} className={(isFeatured) ? 'Listing featured' : 'Listing'}>
@@ -59,21 +52,73 @@ function JobListing({data}) {
         </p>
       </div>
       <div>
-        <Tags tags={tags} />
+        <Tags role={role} level={level} languages={languages} tools={tools} setTags={setTags} />
       </div>
     </article>
   );
 }
 
-function Tags({tags}) {
+function Tags({role, level, languages, tools, setTags}) {
   function handleClick(e) {
     if (e.target.tagName === 'UL') return;
-    console.log(e.target.innerText);
+    const value = e.target.innerText;
+    switch(e.target.dataset.type) {
+      case 'role':
+        setTags(tags => {
+          return {
+            ...tags,
+            role: value
+          };
+        });
+        break;
+      case 'level':
+        setTags(tags => {
+          return {
+            ...tags,
+            level: value
+          };
+        });
+        break;
+      case 'lang':
+        setTags(tags => {
+          if (tags.languages.includes(value)) {
+            return tags;
+          } else {
+            return {
+              ...tags,
+              languages: [...tags.languages, value]
+            };
+          }
+        });
+        break;
+      case 'tool':
+        setTags(tags => {
+          if (tags.tools.includes(value)) {
+            return tags;
+          } else {
+            return {
+              ...tags,
+              tools: [...tags.tools, value]
+            };
+          }
+        });
+        break;
+      default:
+        setTags({
+          role: '',
+          level: '',
+          tools: [],
+          languages: []
+        });
+    }
   }
 
   return (
-    <ul className='Tags' onClick={handleClick}>
-      {tags.map(tag => (<li>{tag}</li>))}
-    </ul>
+      <ul className='Tags' onClick={handleClick}>
+        <li data-type='role'>{role}</li>
+        <li data-type='level'>{level}</li>
+        {languages.map(tag => <li data-type='lang'>{tag}</li>)}
+        {tools.map(tag => <li data-type='tool'>{tag}</li>)}
+      </ul>
   );
 }

@@ -7,33 +7,72 @@ import Filter from './components/Filter';
 
 function App() {
 
-
-  //todo
-  const {tags, setTags} = useState({
+  const [tags, setTags] = useState({
     role: '',
     level: '',
     tools: [],
     languages: []
   });
 
-  function filterListings(data, state) {
-    data.filter(listing => {
-      let isSelected = false;
-      if (state.role && state.role === data.role) {
-        isSelected = true;
-      }
-      if (state.level && state) {
-        //todo
-      }
-    });
+  let showFilter = false;
+  if (tags.role || tags.level) {
+    showFilter = true;
+  }
+
+  if (tags.tools.length > 0 || tags.languages.length > 0) {
+    showFilter = true;
   }
 
   return (
     <>
-      <Filter tags={tags} />
-      <Listings listings={data} />
+      {showFilter && <Filter tags={tags} setTags={setTags} />}
+      <Listings listings={filterListings(tags, data)} setTags={setTags}/>
     </>
   )
 }
 
 export default App;
+
+function filterListings(state, data) {
+  const listOfTags = [...state.languages, ...state.tools];
+  
+  if (state.role) {
+    listOfTags.push(state.role);
+  }
+  
+  if (state.level) {
+    listOfTags.push(state.level)
+  }
+
+  console.log(listOfTags);
+
+  return data.filter(listing => {
+    let isSelected = false;
+
+    const listingTags = [
+      listing.role, listing.level, ...listing.languages, ...listing.tools
+    ];
+
+    console.log(listingTags);
+
+    if (isSubset(listOfTags, listingTags)) {
+      isSelected = true;
+    }
+
+    return isSelected;
+  });
+}
+
+function isSubset(arr1, arr2) {
+  if (arr1.length === 0) return true;
+
+  let isSubsetArr = true;
+
+  for (const item of arr1) {
+    if (!arr2.includes(item)) {
+      isSubsetArr = false;
+    }
+  }
+
+  return isSubsetArr;
+}

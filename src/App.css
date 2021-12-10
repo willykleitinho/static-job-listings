@@ -5,7 +5,7 @@
   margin-bottom: 40px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0px 20px 30px -30px var(--clr-primary);
+  box-shadow: 0px 10px 30px -20px var(--clr-primary);
 }
 
 .Listing.featured::before {
@@ -28,7 +28,7 @@
 .Listing-title {
   color: var(--clr-2);
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 1rem;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .Listing-info > *{
-  margin: 7px;
+  margin: 5px;
 }
 
 .Listing-info > *:first-child {
@@ -52,7 +52,7 @@
   background-color: var(--clr-2);
   color: #fff;
   margin-left: 10px;
-  font-size: 1rem;
+  font-size: .75rem;
   text-transform: uppercase;
 }
 
@@ -75,6 +75,63 @@
   color: var(--clr-primary);
   font-weight: bold;
   padding: 5px;
-  margin: 0 7px;
+  margin: 0 5px;
   margin-top: 10px;
+}
+
+.Filter {
+  display: flex;
+  background: var(--clr-Filter-Tablets);
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 7px 15px -10px var(--clr-primary);
+  margin-bottom: 30px;
+}
+
+.Filter-labels {
+  list-style: none;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.Filter-label {
+  width: max-content;
+  box-shadow: 0 5px 15px -10px var(--clr-primary);
+}
+
+.Filter-label::after {
+  content: 'x';
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: white;
+  background: var(--clr-primary);
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-left: 10px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.Filter-label:hover::after {
+  background: var(--clr-2);
+}
+
+.Filter-button {
+  width: 70px;
+  border: none;
+  background: transparent;
+  color: var(--clr-primary);
+  font-weight: bold;
+  font-family: var(--font-family);
+  padding: 5px;
+}
+
+.Filter-button:hover {
+  text-decoration: underline;
 }
