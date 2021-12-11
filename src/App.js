@@ -14,18 +14,9 @@ function App() {
     languages: []
   });
 
-  let showFilter = false;
-  if (tags.role || tags.level) {
-    showFilter = true;
-  }
-
-  if (tags.tools.length > 0 || tags.languages.length > 0) {
-    showFilter = true;
-  }
-
   return (
     <>
-      {showFilter && <Filter tags={tags} setTags={setTags} />}
+      <Filter tags={tags} setTags={setTags} />
       <Listings listings={filterListings(tags, data)} setTags={setTags}/>
     </>
   )

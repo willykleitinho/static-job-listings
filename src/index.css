@@ -13,8 +13,8 @@
  --font-family: 'Spartan', sans-serif;
  /* 
   Available font weights:
-    - 500,
-    - 700.
+    - 500 (normal),
+    - 700 (bold).
  */
 }
 
@@ -31,5 +31,14 @@ html {
 body {
   background: var(--clr-Background);
   padding: 1.5rem;
+  padding-top: 7rem;
   font-family: var(--font-family);
+}
+.body-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  background: var(--clr-primary);
 }

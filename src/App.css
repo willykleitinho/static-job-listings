@@ -1,11 +1,10 @@
 .Listing {
   background: var(--clr-Background);
   padding: 20px 25px;
-  border-radius: 10px;
-  margin-bottom: 40px;
-  overflow: hidden;
   position: relative;
   box-shadow: 0px 10px 30px -20px var(--clr-primary);
+  max-width: 600px;
+  margin: 40px auto;
 }
 
 .Listing.featured::before {
@@ -17,6 +16,13 @@
   top: 0;
   left: 0;
   background: var(--clr-primary);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.Listing-image {
+  width: 50px;
+  margin-top: -61px;
 }
 
 .Listing-company {
@@ -30,6 +36,12 @@
   font-weight: bold;
   font-size: 1.1rem;
   margin-bottom: 1rem;
+  text-decoration: none;
+  transition: color 100ms;
+}
+
+.Listing-title:hover {
+  color: var(--clr-primary);
 }
 
 .Listing-info {
@@ -75,17 +87,25 @@
   color: var(--clr-primary);
   font-weight: bold;
   padding: 5px;
+  padding-top: 7px;
   margin: 0 5px;
   margin-top: 10px;
+  border-radius: 5px;
+  transition: color 100ms, background-color 100ms;
+}
+
+.Tags > *:hover {
+  background: var(--clr-primary);
+  color: white;
 }
 
 .Filter {
   display: flex;
   background: var(--clr-Filter-Tablets);
   padding: 1rem;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 7px 15px -10px var(--clr-primary);
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 .Filter-labels {
@@ -116,6 +136,7 @@
   margin-left: 10px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  transition: background-color 100ms;
 }
 
 .Filter-label:hover::after {
@@ -126,12 +147,21 @@
   width: 70px;
   border: none;
   background: transparent;
-  color: var(--clr-primary);
+  color: var(--clr-1);
   font-weight: bold;
   font-family: var(--font-family);
   padding: 5px;
+  transition: color 100ms;
+}
+
+.Filter-button:hover {
+  color: var(--clr-primary);
 }
 
 .Filter-button:hover {
   text-decoration: underline;
+}
+
+.Filter-spacer {
+  margin-bottom: 6rem;
 }

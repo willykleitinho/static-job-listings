@@ -35,14 +35,14 @@ function JobListing({data, setTags}) {
 
   return (
     <article data-id={id} className={(isFeatured) ? 'Listing featured' : 'Listing'}>
-      <img src={logo} alt={company + 'logo.'} />
+      <img src={logo} alt={company + ' logo.'} className='Listing-image' />
       <div>
         <p className='Listing-company'>
           {company}
           {isNew && <Label text='New!' classes='new' />}
           {isFeatured && <Label text='Featured' classes='featured' />}  
         </p>
-        <p className='Listing-title'>{position}</p>
+        <p><a href='#' className='Listing-title'>{position}</a></p>
         <p className='Listing-info'>
           <span>{postedAt}</span>
           {spacer}

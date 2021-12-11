@@ -84,16 +84,29 @@ export default function Filter({tags, setTags}) {
     }
 
   }
+  
+  let showFilter = false;
+  if (tags.role || tags.level) {
+    showFilter = true;
+  }
+
+  if (tags.tools.length > 0 || tags.languages.length > 0) {
+    showFilter = true;
+  }
+
+  if (!showFilter) {
+    return <div className='Filter-spacer'></div>
+  }
 
   return (
     <div onClick={handleClick} className='Filter'>
       <ul class='Filter-labels'>
-      {tags.role && <li className='Filter-label' data-type='role'>{tags.role}</li>}
-      {tags.level && <li className='Filter-label' data-type='level'>{tags.level}</li>}
-      {tags.languages.map(tag => <li className='Filter-label' data-type='lang'>{tag}</li>)}
-      {tags.tools.map(tag => <li className='Filter-label' data-type='tool'>{tag}</li>)}
+        {tags.role && <li className='Filter-label' data-type='role'>{tags.role}</li>}
+        {tags.level && <li className='Filter-label' data-type='level'>{tags.level}</li>}
+        {tags.languages.map(tag => <li className='Filter-label' data-type='lang'>{tag}</li>)}
+        {tags.tools.map(tag => <li className='Filter-label' data-type='tool'>{tag}</li>)}
       </ul>
-    <button className='Filter-button'>Clear</button>
+      <button className='Filter-button'>Clear</button>
     </div>
   );
 }
