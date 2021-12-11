@@ -34,6 +34,7 @@ body {
   padding-top: 7rem;
   font-family: var(--font-family);
 }
+
 .body-bg-image {
   position: absolute;
   top: 0;
@@ -41,4 +42,10 @@ body {
   z-index: -1;
   width: 100%;
   background: var(--clr-primary);
+}
+
+@media (min-width: 1000px) {
+  body {
+    padding-top: 9rem;
+  }
 }
