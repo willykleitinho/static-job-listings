@@ -42,7 +42,7 @@ function JobListing({data, setTags}) {
           {isNew && <Label text='New!' classes='new' />}
           {isFeatured && <Label text='Featured' classes='featured' />}  
         </p>
-        <p><a href='#' className='Listing-title'>{position}</a></p>
+        <p><a href='https://github.com/willykleitinho' className='Listing-title'>{position}</a></p>
         <p className='Listing-info'>
           <span>{postedAt}</span>
           {spacer}
