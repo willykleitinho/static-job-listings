@@ -41,11 +41,19 @@ body {
   left: 0;
   z-index: -1;
   width: 100%;
-  background: var(--clr-primary);
+  aspect-ratio: 375/156;
+  background-image: url('./images/bg-header-mobile.svg');
+  background-color: var(--clr-primary);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 @media (min-width: 1000px) {
   body {
     padding-top: 8rem;
+  }
+  .body-bg-image {
+    aspect-ratio: 1366/156;
+    background-image: url('./images/bg-header-desktop.svg');
   }
 }
