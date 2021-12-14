@@ -2,15 +2,14 @@
 
 :root {
   --clr-primary: hsl(180, 29%, 50%);
+  --clr-background: hsl(180, 52%, 96%);
 
- --clr-Background: hsl(180, 52%, 96%);
- --clr-Filter-Tablets: hsl(180, 31%, 95%);
- --clr-1: hsl(180, 8%, 52%);
- --clr-2: hsl(180, 14%, 20%);
-
- --Font-size: 15px;
+ --clr-filter-labels: hsl(180, 31%, 95%);
+ --clr-text-light: hsl(180, 8%, 52%);
+ --clr-text-dark: hsl(180, 14%, 20%);
 
  --font-family: 'Spartan', sans-serif;
+
  /* 
   Available font weights:
     - 500 (normal),
@@ -29,7 +28,7 @@ html {
 }
 
 body {
-  background: var(--clr-Background);
+  background: var(--clr-background);
   padding: 1.5rem;
   padding-top: 7rem;
   font-family: var(--font-family);

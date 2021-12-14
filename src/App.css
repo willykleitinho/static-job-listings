@@ -1,5 +1,5 @@
 .Listing {
-  background: var(--clr-Background);
+  background: var(--clr-background);
   position: relative;
   box-shadow: 0px 10px 30px -20px var(--clr-primary);
   max-width: 1110px;
@@ -36,7 +36,7 @@
 }
 
 .Listing-title {
-  color: var(--clr-2);
+  color: var(--clr-text-dark);
   font-weight: bold;
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -49,7 +49,7 @@
 }
 
 .Listing-info {
-  color: var(--clr-1);
+  color: var(--clr-text-light);
   margin: 1rem 0;
   font-size: 0.85rem;
 }
@@ -66,7 +66,7 @@
   padding: 4px 10px;
   padding-top: 8px;
   border-radius: 50px;
-  background-color: var(--clr-2);
+  background-color: var(--clr-text-dark);
   color: #fff;
   margin-left: 10px;
   font-size: .7rem;
@@ -78,14 +78,14 @@
 }
 
 .Label.featured {
-  background: var(--clr-2);
+  background: var(--clr-text-dark);
 }
 
 .Tags {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  border-top: 1px solid var(--clr-1);
+  border-top: 1px solid var(--clr-text-light);
   margin-top: 20px;
 }
 
@@ -107,10 +107,9 @@
   color: white;
 }
 
-
 .Filter {
   display: flex;
-  background: var(--clr-Filter-Tablets);
+  background: var(--clr-filter-labels);
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 0 7px 15px -10px var(--clr-primary);
@@ -156,14 +155,14 @@
 }
 
 .Filter-label:hover::after {
-  background: var(--clr-2);
+  background: var(--clr-text-dark);
 }
 
 .Filter-button {
   width: 70px;
   border: none;
   background: transparent;
-  color: var(--clr-1);
+  color: var(--clr-text-light);
   font-weight: bold;
   font-family: var(--font-family);
   padding: 5px;
