@@ -1,30 +1,4 @@
 
-
-
-/*
-useful: i dont think so
-
-const labels = {
-  'Frontend': 1,
-  'Senior': 2,
-  'HTML': 3,
-  'CSS': 4,
-  'JavaScript': 5,
-  'Fullstack': 6,
-  'Midweight': 7,
-  'Python': 8,
-  'React': 9,
-  'Junior': 10,
-  'Sass': 11,
-  'Ruby': 12,
-  'Backend': 13,
-  'RoR': 14,
-  'Vue': 15,
-  'Django': 16 
-};
-*/
-
-
 export default function Filter({tags, setTags}) {
   function handleClick(e) {
     if (e.target.tagName !== 'BUTTON' && e.target.tagName !== 'LI') return;
@@ -99,7 +73,7 @@ export default function Filter({tags, setTags}) {
   }
 
   return (
-    <div onClick={handleClick} className='Filter'>
+    <section onClick={handleClick} className='Filter'>
       <ul class='Filter-labels'>
         {tags.role && <li className='Filter-label' data-type='role'>{tags.role}</li>}
         {tags.level && <li className='Filter-label' data-type='level'>{tags.level}</li>}
@@ -107,6 +81,6 @@ export default function Filter({tags, setTags}) {
         {tags.tools.map(tag => <li className='Filter-label' data-type='tool'>{tag}</li>)}
       </ul>
       <button className='Filter-button'>Clear</button>
-    </div>
+    </section>
   );
 }

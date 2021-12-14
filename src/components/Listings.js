@@ -1,20 +1,4 @@
 
-/* 
-  "id": 8,
-  "company": "Insure",
-  "logo": "./images/insure.svg",
-  "new": false,
-  "featured": false,
-  "position": "Junior Frontend Developer",
-  "role": "Frontend",
-  "level": "Junior",
-  "postedAt": "2w ago",
-  "contract": "Full Time",
-  "location": "USA Only",
-  "languages": ["JavaScript"],
-  "tools": ["Vue", "Sass"]
-*/
-
 import Label from './Label';
 
 const spacer = '•';
@@ -26,7 +10,6 @@ export default function Listings({listings, setTags}) {
     </section>
   );
 }
-
 
 function JobListing({data, setTags}) {
   
@@ -42,7 +25,9 @@ function JobListing({data, setTags}) {
           {isNew && <Label text='New!' classes='new' />}
           {isFeatured && <Label text='Featured' classes='featured' />}  
         </p>
-        <p><a href='https://github.com/willykleitinho' className='Listing-title'>{position}</a></p>
+        <p>
+          <a href='https://github.com/willykleitinho' className='Listing-title'>{position}</a>
+        </p>
         <p className='Listing-info'>
           <span>{postedAt}</span>
           {spacer}
@@ -61,6 +46,7 @@ function JobListing({data, setTags}) {
 function Tags({role, level, languages, tools, setTags}) {
   function handleClick(e) {
     if (e.target.tagName === 'UL') return;
+
     const value = e.target.innerText;
     switch(e.target.dataset.type) {
       case 'role':
@@ -71,6 +57,7 @@ function Tags({role, level, languages, tools, setTags}) {
           };
         });
         break;
+
       case 'level':
         setTags(tags => {
           return {
@@ -79,30 +66,32 @@ function Tags({role, level, languages, tools, setTags}) {
           };
         });
         break;
+
       case 'lang':
         setTags(tags => {
-          if (tags.languages.includes(value)) {
-            return tags;
-          } else {
+          if (!tags.languages.includes(value)) {
             return {
               ...tags,
               languages: [...tags.languages, value]
             };
           }
+          return tags;
         });
         break;
+
       case 'tool':
         setTags(tags => {
-          if (tags.tools.includes(value)) {
-            return tags;
-          } else {
+          if (!tags.tools.includes(value)) {
             return {
               ...tags,
               tools: [...tags.tools, value]
             };
           }
+          return tags;
         });
         break;
+
+      // clear button
       default:
         setTags({
           role: '',
