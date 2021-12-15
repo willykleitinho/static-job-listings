@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [on Frontend Mentor](https://your-solution-url.com)
+- Solution URL: [on Frontend Mentor](https://www.frontendmentor.io/solutions/job-listing-with-filter-using-react-DUNJDb7dY)
 - Live Site URL: [on Netlify](https://mystifying-jennings-5b80d8.netlify.app/)
 
 ## My process
